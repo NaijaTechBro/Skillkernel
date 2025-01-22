@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillKernel - Home Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        /* Base Styles */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            padding: 15px 0;
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link  {
+            font-size: 16px;
+            font-weight: 900;
+            color: #000000;
+
+        }
+
+        .navbar-brand {
+            color: #C41E3A !important;
+            font-size: 1.8rem;
+            font-family: 'Pacifico', cursive;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs9RIYqlSA8ErULQ2I0KC_OPehIxIiKIGYlw&s') center/cover;
+            padding: 100px 0;
+            color: white;
+            min-height: 500px;
+            margin-bottom: 40px;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background-color: #C41E3A;
+            border-color: #C41E3A;
+            padding: 10px 30px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn-secondary {
+            background-color: white;
+            border-color: black;
+            color: black;
+            font-weight: 900;
+            padding: 10px 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-btn-primary {
+            background-color: #C41E3A;
+            border-color: #C41E3A;
+            color: white;
+            font-weight: 900;
+            padding: 10px 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary:hover {
+            background-color: #A01830;
+            border-color: #A01830;
+            transform: translateY(-2px);
+        }
+
+        .courses-btn {
+            background-color: #C41E3A;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .courses-btn i{
+            color: white;
+            padding: 0.3rem;
+            height: 4px;
+        }
+
+        .courses-btn:hover {
+            background-color: #A01830;
+            color: white;
+        }
+
+        /* Search Styles Start*/
+        .search-container {
+            position: relative;
+            max-width: 450px;
+        }
+
+        .search-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .search-section h2 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+        .search-input {
+            border: 1px solid #e0e0e0;
+            padding: 0.75rem 1rem;
+            padding-right: 120px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .search-input ::placeholder{
+            font-size: 15px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #C41E3A;
+            box-shadow: 0 0 0 0.2rem rgba(196, 30, 58, 0.25);
+        }
+
+        .search-wrapper {
+            color: #DC3545;
+            position: absolute;
+            width: 45px;
+            height: 40px;
+            right: 15px;
+            border-radius: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #DC3545;
+            color: #fff;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #DC3545;
+            color: #fff;
+        }
+
+        .choose-search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FF6B4A;
+        }
+
+        .search-button {
+            background-color: #FFE6E6;
+            color: #FF6B4A;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Search Styles Start*/
+
+        /* Course Card Styles Starts */
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin: 10px;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-title {
+            background: linear-gradient(90deg, #FF6B4A, #C837AB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* Feature Items */
+        .feature-item {
+            background-color: #FFF1F1;
+            border-radius: 25px;
+            padding: 10px 20px;
+            margin: 8px 0;
+            color: #FF6B4A;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(5px);
+            background-color: #FFE6E6;
+        }
+
+        .view-details-btn {
+            background-color: #3D8B87;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 15px;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(61, 139, 135, 0.2);
+        }
+
+        /* Carousel Controls */
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-control:hover {
+            background-color: #C41E3A;
+            color: white;
+        }
+
+        .carousel-control.prev {
+            left: -20px;
+        }
+
+        .carousel-control.next {
+            right: -20px;
+        }
+
+        .carousel-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+
+        .dot.active {
+            background: blue;
+        }
+
+        .view-all-btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: black;
+            margin-top: 20px;
+        }
+
+        /* Explore Cards */
+        .explore-card {
+            border-radius: 25px;
+            padding: 40px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .explore-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .explore-shorts {
+            background-color: #FFD54F;
+            color: #1a237e;
+        }
+
+        .explore-degree {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        /* Price Styling */
+        .price-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #C41E3A;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #666;
+            margin-left: 10px;
+        }
+
+        /* Course Card Styles Star */
+
+        /* Courses */
+
+        .maincourses-container {
+            padding: 2rem 0;
+            position: relative;
+            background-color: #f8f9fa;
+        }
+
+        .mainnav-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .mainnav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: white;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mainnav-btn:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        .maincourse-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            background: white;
+        }
+
+        .mainexplore-card {
+            background-color: #E57373;
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .maincurved-pattern {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            opacity: 0.2;
+        }
+
+        .maincourse-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .maincourse-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background-color: #f8f9fa;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .maincourse-badge i {
+            margin-right: 5px;
+            color: #E57373;
+        }
+
+        .maincourse-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .mainprice-original {
+            text-decoration: line-through;
+            color: #666;
+            margin-left: 0.5rem;
+        }
+
+        .maindetail-btn {
+            background-color: #26A69A;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 10px;
+            width: 100%;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .maindetail-btn:hover {
+            background-color: #2196F3;
+            transform: translateY(-2px);
+        }
+
+        .mainexplore-btn {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            padding: 0.75rem 2rem;
+            border-radius: 10px;
+            width: 100%;
+            margin-top: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .mainexplore-btn:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        /* Popular Topics */
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .pcard {
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            padding: 2rem;
+        }
+
+        .card-yellow {
+            background-color: #FFD54F;
+        }
+
+        .card-blue {
+            background-color: #1A237E;
+            color: white;
+        }
+
+        .card-coral {
+            background-color: #e66109;
+            color: white;
+        }
+
+        .card-teal {
+            background-color: #3D8B87;
+            color: white;
+        }
+
+        .pcard-title h2 {
+            color: #000;
+        }
+
+        .pcard-title {
+            font-size: 2.4rem;
+            font-weight: 1000;
+            margin-bottom: 1rem;
+        }
+
+        .pcourse-img {
+            width: 100%;
+            height: 450px;
+            border-radius: 0.5rem;
+            margin-bottom: 0.4rem;
+            box-shadow: 0 2px 4px rgba(10, 10, 10, 0.685);
+        }
+        .explore-btn {
+            background-color: #DC3545;
+            color: white;
+            height: 60px;
+            border: none;
+            border-radius: 10px;
+            padding: 0.5rem 2rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            box-shadow: 0 2px 4px rgba(10, 10, 10, 0.685);
+        }
+
+        .btn-secondary-explore {
+            background-color: white;
+            color: black;
+            height: 60px;
+            width: 200px;
+            border: #000;
+            border-radius: 10px;
+            padding: 0.5rem 2rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            box-shadow: 0 2px 4px rgba(10, 10, 10, 0.685);
+        }
+
+
+        .pcourse-section {
+            margin-top: 4rem;
+        }
+
+        .topic-badge {
+            background-color: #FFF5F5;
+            color: #DC3545;
+            border: 1.2px solid #DC3545;
+            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #FF6B6B 0%, #9C27B0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        .testimonial-section {
+            background-color:rgba(233, 236, 225, 0.93);
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .testimonial-heading {
+            color:rgb(161, 9, 24);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-horizontal-line {
+            color: #000000;
+            width: 100px;
+            border: 3px solid rgb(0, 0, 0);
+        }
+
+        .testnav-buttons {
+            display:flex;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .testnav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid ;
+            color: #FF6B4A;
+            background:rgb(218, 195, 190);
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .rating {
+            color: #FFD700;
+            margin: 10px 0;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #000;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #8B8B8B;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .newsletter-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        
+        .newsletter-form {
+            position: relative;
+            margin-top: 1rem;
+            max-width: 450px;
+            margin-left: auto;
+        }
+
+        .newsletter-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            padding-right: 120px;
+            border-radius: 10px;
+            border: none;
+            background-color: white;
+        }
+
+        .subscribe-btn {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #DC3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #c82333;
+        }
+
+        .social-icons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            margin-top: -4rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #C41E3A;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #8B8B8B;
+        }
+
+        .cart-wrapper {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .cart-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(235, 226, 226, 0.87);
+        }
+
+        .cart-badge {
+            position: absolute;
+            down: -5px;
+            right: -5px;
+            background-color: #DC3545;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            .search-container {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .course-card {
+                margin: 10px 0;
+            }
+
+            .carousel-control {
+                display: none;
+            }
+
+            .card {
+                margin-bottom: 1rem;
+            }
+            .card-title {
+                font-size: 1.25rem;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">Skillkernel</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <button class="courses-btn">Courses<i class="fas fa-chevron-down"></i></button>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                            Category
+                            <i class="fas fa-chevron-down"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reviews</a>
+                    </li>
+                </ul>
+                
+                <div class="search-container me-3">
+                    <input class="search-input" type="search" placeholder="What do you want to learn?">
+                    <div class="search-wrapper"><i class="fas fa-search search-icon"></i></div>
+                </div>
+                
+                <button class="btn nav-btn-secondary me-2">Log in</button>
+                <button class="btn nav-btn-primary">Apply now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container" >
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <span style="color: #C41E3A">Online Learning </span>Designed 
+                        For Real Life
+                    </h1>
+                    <p class="lead mb-4">
+                        Move your creative journey forward without putting life on hold.
+                        Our programmes will help you find inspiration that fits your routine.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-primary explore-btn">Explore all courses</button>
+                        <button class="btn btn-secondary-explore">Log in</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <!-- Search Section -->
+        <div class="search-section">
+            <h2 class="mb-4">Search for courses</h2>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <input type="text" class="form-control search-input" placeholder="What do you want to learn?">
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select search-input">
+                        <option selected>category</option>
+                        <option selected>--Choose--</option>
+                        <option>Category 1</option>
+                        <option>Category 2</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select search-input">
+                        <option selected>--Choose--</option>
+                        <option>Subject 1</option>
+                        <option>Subject 2</option>
+                    </select>
+                </div>
+                <div class="col-md-3" style="
+                position: relative;
+                margin: 1rem;
+                max-width: 200px;
+                margin-left: auto;">
+                    <button class="search-button w-100">Search</button>
+                    <i class="fas fa-search choose-search-icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Courses Section -->
+        <h2 class="mb-4">Popular courses</h2>
+        <div class="position-relative mb-5">
+            <div class="course-carousel">
+                <!-- Course Card 1 -->
+                <div class="course-card">
+                    <h2 class="course-title">Executive Master of Business Administration (EMBA) in Public Health</h2>
+                    <p class="mb-4">This programme is designed to provide insights into understanding and managing the public health system.</p>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="feature-item">Access to this course.</div>
+                            <div class="feature-item">Access to library.</div>
+                            <div class="feature-item">Learn at your own pace.</div>
+                            <div class="feature-item">Tests to boost your learning.</div>
+                            <div class="feature-item">Digital certificate when eligible.</div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <strong>Course starts</strong>
+                                <div class="h4" style="font-weight: 800;">Anytime</div>
+                            </div>
+                            <div class="mb-3">
+                                <strong>Completion time</strong>
+                                <div class="h4" style="font-weight: 800;">2 Weeks</div>
+                            </div>
+                            <div class="mb-3">
+                                <strong>Limited time offer</strong>
+                                <div>
+                                    <span class="h4" style="font-weight: 800;">£120</span>
+                                    <span class="text-decoration-line-through text-muted ms-2">£216</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="view-details-btn">View course details</button>
+                </div>
+                <!-- Course Card 2 -->
+                <div class="course-card">
+                    <h2 class="course-title">Professional Certificate Course in Understanding Accounting Concepts Principles and Theories</h2>
+                    <p class="mb-4">This programme is designed to provide insights into understanding and managing the public health system.</p>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="feature-item">Access to this course.</div>
+                            <div class="feature-item">Access to library.</div>
+                            <div class="feature-item">Learn at your own pace.</div>
+                            <div class="feature-item">Tests to boost your learning.</div>
+                            <div class="feature-item">Digital certificate when eligible.</div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <strong>Course starts</strong>
+                                <div class="h4" style="font-weight: 800;">Anytime</div>
+                            </div>
+                            <div class="mb-3">
+                                <strong>Completion time</strong>
+                                <div class="h4" style="font-weight: 800;">2 Weeks</div>
+                            </div>
+                            <div class="mb-3">
+                                <strong>Limited time offer</strong>
+                                <div>
+                                    <span class="h4" style="font-weight: 800;">£120</span>
+                                    <span class="text-decoration-line-through text-muted ms-2">£216</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="view-details-btn">View course details</button>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control prev">&lt;</button>
+            <button class="carousel-control next">&gt;</button>
+        </div>
+
+        <!-- Carousel Dots -->
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center">
+            <a href="#" class="view-all-btn">View all courses</a>
+        </div>
+
+        <div class="container py-4 py-lg-5">
+            <!-- Short Courses Section -->
+            <div class="row g-4 mb-5">
+                <!-- Explore Card -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="testnav-buttons">
+                        <button class="testnav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="testnav-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="card h-100 bg-warning">
+                        <div class="card-body d-flex flex-column p-4">
+                            <h2 class="card-title h3 fw-bold">Explore shorts courses</h2>
+                            <p class="card-text">Explore our newest programmes, focused on delivering in-demand skills.</p>
+                            <button class="btn btn-light mt-auto w-100 w-sm-auto">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course Cards -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="path-to-image1.jpg" class="card-img-top" alt="Course Image">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                <span class="badge bg-light text-dark">Online</span>
+                                <span class="badge bg-light text-dark">12 Months</span>
+                            </div>
+                            <h5 class="card-title">Executive Master of Business Administration (EMBA) in Media and Entertainment</h5>
+                            <p class="card-text flex-grow-1">The programme's objective is to equip you with a deeper understanding of entertainment management and media...</p>
+                            <div class="mt-3">
+                                <p class="mb-2 fs-5">£120 <small class="text-muted text-decoration-line-through">£216</small></p>
+                                <button class="btn btn-info text-white w-100">See course details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="path-to-image2.jpg" class="card-img-top" alt="Course Image">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                <span class="badge bg-light text-dark">Online</span>
+                                <span class="badge bg-light text-dark">12 Months</span>
+                            </div>
+                            <h5 class="card-title">Master of Arts (MA) in Project Management</h5>
+                            <p class="card-text flex-grow-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, incidunt!</p>
+                            <div class="mt-3">
+                                <p class="mb-2 fs-5">£120 <small class="text-muted text-decoration-line-through">£216</small></p>
+                                <button class="btn btn-info text-white w-100">See course details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="path-to-image3.jpg" class="card-img-top" alt="Course Image">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                <span class="badge bg-light text-dark">Online</span>
+                                <span class="badge bg-light text-dark">12 Months</span>
+                            </div>
+                            <h5 class="card-title">Advanced Professional Certificate in Leadership and Organizational Behavior</h5>
+                            <p class="card-text flex-grow-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, incidunt!</p>
+                            <div class="mt-3">
+                                <p class="mb-2 fs-5">£120 <small class="text-muted text-decoration-line-through">£216</small></p>
+                                <button class="btn btn-info text-white w-100">See course details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Degree Courses Section -->
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="testnav-buttons">
+                        <button class="testnav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="testnav-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="card h-100 bg-primary text-white">
+                        <div class="card-body d-flex flex-column p-4">
+                            <h2 class="card-title h3 fw-bold">Explore Degree courses</h2>
+                            <p class="card-text">Explore our newest programmes, focused on delivering in-demand skills.</p>
+                            <button class="btn btn-light mt-auto w-100 w-sm-auto">Explore</button>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- Course Cards -->
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="path-to-image1.jpg" class="card-img-top" alt="Course Image">
+                                        <div class="card-body d-flex flex-column p-4">
+                                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                                <span class="badge bg-light text-dark">Online</span>
+                                                <span class="badge bg-light text-dark">12 Months</span>
+                                            </div>
+                                            <h5 class="card-title">Executive Master of Business Administration (EMBA) in Media and Entertainment</h5>
+                                            <p class="card-text flex-grow-1">The programme's objective is to equip you with a deeper understanding of entertainment management and media...</p>
+                                            <div class="mt-3">
+                                                <p class="mb-2 fs-5">£120 <small class="text-muted text-decoration-line-through">£216</small></p>
+                                                <button class="btn btn-info text-white w-100">See course details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="path-to-image2.jpg" class="card-img-top" alt="Course Image">
+                                        <div class="card-body d-flex flex-column p-4">
+                                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                                <span class="badge bg-light text-dark">Online</span>
+                                                <span class="badge bg-light text-dark">12 Months</span>
+                                            </div>
+                                            <h5 class="card-title">Master of Arts (MA) in Project Management</h5>
+                                            <p class="card-text flex-grow-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, incidunt!</p>
+                                            <div class="mt-3">
+                                                <p class="mb-2 fs-5">£120 <small class="text-muted text-decoration-line-through">£216</small></p>
+                                                <button class="btn btn-info text-white w-100">See course details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="path-to-image3.jpg" class="card-img-top" alt="Course Image">
+                                        <div class="card-body d-flex flex-column p-4">
+                                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                                <span class="badge bg-light text-dark">Online</span>
+                                                <span class="badge bg-light text-dark">12 Months</span>
+                                            </div>
+                                            <h5 class="card-title">Advanced Professional Certificate in Leadership and Organizational Behavior</h5>
+                                            <p class="card-text flex-grow-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, incidunt!</p>
+                                            <div class="mt-3">
+                                                <p class="mb-2 fs-5">£120 <small class="text-muted text-decoration-line-through">£216</small></p>
+                                                <button class="btn btn-info text-white w-100">See course details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            </div>
+        
+            <!-- Diploma Courses Section -->
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="testnav-buttons">
+                        <button class="testnav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="testnav-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="card h-100 bg-danger text-white">
+                        <div class="card-body d-flex flex-column p-4">
+                            <h2 class="card-title h3 fw-bold">Explore Diploma courses</h2>
+                            <p class="card-text">Explore our newest programmes, focused on delivering in-demand skills.</p>
+                            <button class="btn btn-light mt-auto w-100 w-sm-auto">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                                 <!-- Course Cards -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="path-to-image1.jpg" class="card-img-top" alt="Course Image">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                <span class="badge bg-light text-dark">Online</span>
+                                <span class="badge bg-light text-dark">12 Months</span>
+                            </div>
+                            <h5 class="card-title">Executive Master of Business Administration (EMBA) in Media and Entertainment</h5>
+                            <p class="card-text flex-grow-1">The programme's objective is to equip you with a deeper understanding of entertainment management and media...</p>
+                            <div class="mt-3">
+                                <p class="mb-2 fs-5">£120 <small class="text-muted text-decoration-line-through">£216</small></p>
+                                <button class="btn btn-info text-white w-100">See course details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="path-to-image2.jpg" class="card-img-top" alt="Course Image">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                <span class="badge bg-light text-dark">Online</span>
+                                <span class="badge bg-light text-dark">12 Months</span>
+                            </div>
+                            <h5 class="card-title">Master of Arts (MA) in Project Management</h5>
+                            <p class="card-text flex-grow-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, incidunt!</p>
+                            <div class="mt-3">
+                                <p class="mb-2 fs-5">£120 <small class="text-muted text-decoration-line-through">£216</small></p>
+                                <button class="btn btn-info text-white w-100">See course details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="path-to-image3.jpg" class="card-img-top" alt="Course Image">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                <span class="badge bg-light text-dark">Online</span>
+                                <span class="badge bg-light text-dark">12 Months</span>
+                            </div>
+                            <h5 class="card-title">Advanced Professional Certificate in Leadership and Organizational Behavior</h5>
+                            <p class="card-text flex-grow-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, incidunt!</p>
+                            <div class="mt-3">
+                                <p class="mb-2 fs-5">£120 <small class="text-muted text-decoration-line-through">£216</small></p>
+                                <button class="btn btn-info text-white w-100">See course details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- View All Button -->
+        <div class="text-center">
+            <a href="#" class="view-all-btn">View all courses</a>
+        </div>
+        </div>
+
+
+        
+        <div class="container mt-5">
+            <!-- Header Section -->
+            <h1 class="hero-title">How a Professional Certificate Works</h1>
+            <p class="lead mb-5">Upskill, reskill or pursue a passion with short courses across every subject, whether you're a beginner or already an expert.</p>
+    
+            <!-- Cards Section -->
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="pcard card-yellow">
+                        <h2 class="pcard-title">Find the Right Program For Your Career</h2>
+                        <p>Professional Certificate programs are offered in a variety of in-demand subjects to help you get ahead.</p>
+                        <button class="mainexplore-btn">Explore</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="pcard card-blue">
+                        <h2 class="pcard-title">Learn & Gain Expertise at Your Own Pace</h2>
+                        <p>On your computer, tablet or phone, online courses make learning flexible to fit your busy life.</p>
+                        <button class="mainexplore-btn">Explore</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="pcard card-coral">
+                        <h2 class="pcard-title" style="color: #000;">Earn a Valuable Credential</h2>
+                        <p style="color: #000;">Showcase your key skills and valuable knowledge.</p>
+                        <button class="mainexplore-btn">Explore</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="pcard card-teal">
+                        <h2 class="pcard-title">Stand Out in Your Field</h2>
+                        <p>Use the knowledge and skills you have gained to drive impact at work and grow your career.</p>
+                        <button class="mainexplore-btn">Explore</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Course Section -->
+            <div class="pcourse-section row align-items-center">
+                <div class="col-md-5">
+                    <img class="pcourse-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCFZEFgK22Cxgto60y9YkJ1vM9qChOYNVuxNdYvOIEYd7Zh8PRnh-7wWkUhwO6Y5O9EEI&usqp=CAU" alt="Student studying" class="img-fluid rounded">
+                </div>
+                <div class="col-md-7">
+                    <h2 class="gradient-text mb-4">Find the right course for you</h2>
+                    <p class="lead mb-4">Choose from over <strong style="font-weight: 800;">21,200 courses</strong> and <strong style="font-weight: 800;">Learning Paths</strong>, dozens added each week.</p>
+                    
+                    <h3 class="mb-3">Popular Topics</h3>
+                    <div class="topics-container">
+                        <span class="topic-badge">Business Management</span>
+                        <span class="topic-badge">Health and Psychology</span>
+                        <span class="topic-badge">Business Law</span>
+                        <span class="topic-badge">Information Technology</span>
+                        <span class="topic-badge">Personal Development</span>
+                        <span class="topic-badge">Teaching and Education</span>
+                        <span class="topic-badge">Finance and Accounting</span>
+                        <span class="topic-badge">Office Productivity</span>
+                        <span class="topic-badge">Sales and Marketing</span>
+                        <span class="topic-badge">Leadership and Entrepreneurship</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testnav-buttons">
+                <button class="testnav-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="testnav-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="testimonial-heading">How learners like you<br>are achieving their goals</h2>
+                    <hr class="testimonial-horizontal-line">
+                    <p>Participants in our courses don't just learn new skills, they </br> enjoy the experience too.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-4">
+                        <img src="https://t4.ftcdn.net/jpg/04/67/89/09/240_F_467890956_pfcoWRlq1hIpJLuqAQLUUqlvWQAqU42r.jpg" alt="Profile" class="profile-image">
+                        <div>
+                            <h3>Andrew Samson</h3>
+                            <p class="text-muted">Communication Manager, Pepsi</p>
+                            <h6>Executive Education</h6>
+                            <div class="rating">
+                                ★★★★★
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate reiciendis repellat ullam voluptas accusantium maxime vel cupiditate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>About us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Mission and Vision</a></li>
+                        <li><a href="#">Our Partners</a></li>
+                        <li><a href="#">Become a Partner</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Popular Subjects</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Business Management</a></li>
+                        <li><a href="#">Personal Development</a></li>
+                        <li><a href="#">Business Law</a></li>
+                        <li><a href="#">Sales and Marketing</a></li>
+                        <li><a href="#">Office Productivity</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Small Prints</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="newsletter-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Sign up to our newsletter</h3>
+                        <p>Stay up to date with the latest news, announcements, and articles.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email address">
+                            <button type="submit" class="subscribe-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="copyright">
+                    © SkillKernel 2023. All rights reserved
+                </div>
+            </div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+        </div>
+    </footer>
+
+    <!-- Cart Icon -->
+        <div class="cart-wrapper">
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">10</span>
+            </div>
+        </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            // Initialize Slick Carousel with improved settings
+            $('.course-carousel').slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                prevArrow: $('.carousel-control.prev'),
+                nextArrow: $('.carousel-control.next'),
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                pauseOnHover: true,
+                responsive: [
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 1,
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+
+            // Initialize tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+
+            // Smooth scroll for anchor links
+            $('a[href*="#"]').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top - 100
+                }, 500, 'linear');
+            });
+        });
+    </script>
+</body>
+</html>
